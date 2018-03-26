@@ -1,6 +1,13 @@
 package art.view;
 
-public class ArtPanel
+import art.controller.*;
+
+public class ArtPanel extends JPanel
 {
+	public ArtPanel()
+	{
+		
+	}
+	
 
 }
