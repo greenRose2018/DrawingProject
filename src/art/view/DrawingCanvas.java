@@ -1,6 +1,8 @@
 package art.view;
 
-public class DrawingCanvas
+import javax.swing.JPanel;
+
+public class DrawingCanvas extends JPanel
 {
 
 }
