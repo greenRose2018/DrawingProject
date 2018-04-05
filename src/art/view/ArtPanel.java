@@ -3,13 +3,60 @@ package art.view;
 import java.awt.*;
 import art.controller.ArtController;
 import javax.swing.*;
+import javax.swing.event.*;
+import java.util.Hashtable;
 
 public class ArtPanel extends JPanel
 {
-	public ArtPanel()
+	private final int MINIMUM_EDGE = 5;
+	private final int MAXIMUM_EDGE = 20;
+	private final int MINIMUM_SCALE = 20;
+	private final int MAXIMUM_SCALE = 100;
+	
+	private ArtController app;
+	
+	private SpringLayout appLayout;
+	private DrawingCanvas canvas;
+	private JPanel buttonPanel;
+	private JPanel sliderPanel;
+	private JSlider scaleSlider;
+	private JSlider edgeSlider;
+	private JButton triangleBtn;
+	private JButton rectangleBtn;
+	private JButton ellipseBtn;
+	private JButton polygonBtn;
+	private JButton clearBtn;
+	private JButton saveBtn;
+	private JButton colorBtn;
+	
+	private int currentEdgeCount;
+	private int currentScale;
+	
+	public ArtPanel(ArtController app)
 	{
 		super();
 		
+		this.app = app;
+		appLayout = new SpringLayout();
+		
+		currentScale = MINIMUM_SCALE;
+		currentEdgeCount = MINIMUM_EDGE;
+		scaleSlider = new JSlider(MINIMUM_SCALE, MAXIMUM_SCALE);
+		edgeSlider = new JSlider(MINIMUM_EDGE, MAXIMUM_EDGE);
+		
+		canvas = new DrawingCanvas(app);
+		sliderPanel = new JPanel();
+		buttonPanel = new JPanel(new GridLayout(0,1));
+		
+		triangleBtn = new JButton("add triangle");
+		rectangleBtn = new JButton("add rectangle");
+		ellipseBtn = new JButton("add ellipse");
+		polygonBtn = new JButton("add polygon");
+		clearBtn = new JButton("clear image");
+		saveBtn = new JButton("save image");
+		colorBtn = new JButton("change color");
+		
+		setupSliders();
 		setupPanel();
 		setupLayout();
 		setupListeners();
