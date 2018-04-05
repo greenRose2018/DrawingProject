@@ -37,6 +37,42 @@ public class DrawingCanvas extends JPanel
 		this.setMaximumSize(getPreferredSize());
 	}
 	
+	private void updateImage()
+	{
+		Graphics2D currentGraphics = (Graphics2D) canvasImage.getGraphics();
+		
+		for(Ellipse2D current : ellipseList)
+		{
+			currentGraphics.setColor(randomColor());
+			currentGraphics.setStroke(new BasicStroke(2));
+			currentGraphics.fill(current);
+			currentGraphics.setColor(randomColor());
+			currentGraphics.draw(current);
+		}
+		
+		for(Polygon currentTri : triangleList)
+		{
+			currentGraphics.setColor(randomColor());
+			currentGraphics.fill(currentTri);
+		}
+		
+		for(Polygon currentPoly : polygonList)
+		{
+			currentGraphics.setColor(randomColor());
+			currentGraphics.setStroke(new BasicStroke(4));
+			currentGraphics.draw(currentPoly);
+		}
+		
+		for(Rectangle currentRect : rectangleList)
+		{
+			currentGraphics.setColor(randomColor());
+			currentGraphics.fill(currentRect);
+		}
+		
+		currentGraphics.dispose();
+		repaint();
+	}
+	
 	private Color randomColor()
 	{
 		int red = (int) (Math.random() * 256);
