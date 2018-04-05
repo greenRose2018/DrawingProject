@@ -92,6 +92,26 @@ public class ArtPanel extends JPanel
 	}
 	private void setupPanel()
 	{
+		this.setLayout(appLayout);
+		this.setBackground(Color.DARK_GRAY);
+		this.setPreferredSize(new Dimension(1024, 768));
+		this.add(canvas);
+		
+		buttonPanel.setPreferredSize(new Dimension(200, 450));
+		buttonPanel.add(triangleBtn);
+		buttonPanel.add(rectangleBtn);
+		buttonPanel.add(ellipseBtn);
+		buttonPanel.add(polygonBtn);
+		buttonPanel.add(clearBtn);
+		buttonPanel.add(saveBtn);
+		buttonPanel.add(colorBtn);
+		
+		sliderPanel.setPreferredSize(new Dimension(250, 450));
+		sliderPanel.add(scaleSlider);
+		sliderPanel.add(edgeSlider);
+		
+		this.add(buttonPanel);
+		this.add(sliderPanel);
 		
 	}
 	private void setupListeners()
