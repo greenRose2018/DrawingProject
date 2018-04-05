@@ -1,6 +1,8 @@
 package art.view;
 
-public class ArtFrame
+import javax.swing.JFrame;
+
+public class ArtFrame extends JFrame
 {
 
 }
