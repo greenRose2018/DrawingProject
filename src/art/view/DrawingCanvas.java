@@ -97,6 +97,16 @@ public class DrawingCanvas extends JPanel
 		updateImage();
 	}
 	
+	public void clear()
+	{
+		canvasImage = new BufferedImage(600,600, BufferedImage.TYPE_INT_ARGB);
+		ellipseList.clear();
+		triangleList.clear();
+		polygonList.clear();
+		rectangleList.clear();
+		updateImage();
+	}
+	
 	private Color randomColor()
 	{
 		int red = (int) (Math.random() * 256);
