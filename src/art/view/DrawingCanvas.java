@@ -37,6 +37,16 @@ public class DrawingCanvas extends JPanel
 		this.setMaximumSize(getPreferredSize());
 	}
 	
+	private Color randomColor()
+	{
+		int red = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int alpha = (int) (Math.random() * 256);
+		
+		return new Color(red, green, blue, alpha);
+	}
+	
 	@Override
 	protected void paintComponent(Graphics graphics)
 	{
