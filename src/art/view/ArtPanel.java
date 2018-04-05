@@ -154,6 +154,6 @@ public class ArtPanel extends JPanel
 		int cornerY = (int) (Math.random() * 600);
 		int width = (int) (Math.random() * currentScale) + 1;
 		
-		return rec;
+		return currentRectangle;
 	}
 }
