@@ -107,6 +107,21 @@ public class DrawingCanvas extends JPanel
 		updateImage();
 	}
 	
+	public void save()
+	{
+		try
+		{
+			JFileChooser saveDialog = new JFileChooser();
+			saveDialog.showSaveDialog(app.getFrame());
+			String savePath = saveDialog.getSelectedFile().getPath();
+			ImageIO.write(canvasImage, "PNG", new File(savePath));
+		}
+		catch(IOException error)
+		{
+			app.handleErrors(error);
+		}
+	}
+	
 	public void changeBackground()
 	{
 		Graphics2D current = canvasImage.createGraphics();
