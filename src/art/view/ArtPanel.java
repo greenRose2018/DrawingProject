@@ -1,6 +1,8 @@
 package art.view;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
+
 import art.controller.ArtController;
 import javax.swing.*;
 import javax.swing.event.*;
@@ -165,5 +167,24 @@ public class ArtPanel extends JPanel
 		}
 		
 		return currentRectangle;
+	}
+	private Ellipse2D createEllipse()
+	{
+		Ellipse2D ellipse = new Ellipse2D.Double();
+		
+		int cornerX = (int)(Math.random() * 600);
+		int cornerY = (int)(Math.random() * 600);
+		double width = Math.random() * currentScale + 1;
+		if(coinFlip())
+		{
+			ellipse.setFrame(cornerX, cornerY, width, width);
+		}
+		else
+		{
+			double height = Math.random() * currentScale + 1;
+			ellipse.setFrame(cornerX, cornerY, width, height);
+		}
+		
+		return ellipse;
 	}
 }
