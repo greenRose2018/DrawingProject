@@ -129,6 +129,18 @@ public class ArtPanel extends JPanel
 				}
 			}
 		});
+		
+		scaleSlider.addChangeListener(new ChangeListener()
+		{
+			@Override
+			public void stateChanged(ChangeEvent e)
+			{
+				if(!scaleSlider.getValueIsAdjusting())
+				{
+					currentScale = scaleSlider.getValue();
+				}
+			}
+		});
 	}
 	private void setupLayout()
 	{
