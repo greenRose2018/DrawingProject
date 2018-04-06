@@ -1,6 +1,8 @@
 package art.view;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 
 import art.controller.ArtController;
@@ -118,6 +120,44 @@ public class ArtPanel extends JPanel
 	}
 	private void setupListeners()
 	{
+		rectangleBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				Rectangle rectangle = createRectangle();
+			}
+		});
+		
+		triangleBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				Polygon triangle = createPolygon(3);
+				canvas.addShape(triangle);
+			}
+			
+		});
+		
+		polygonBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				Polygon polygon = createPolygon(currentEdgeCount);
+				canvas.addShape(polygon);
+			}
+			
+		});
+		
+		ellipseBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				Ellipse2D ellipse = createEllipse();
+				canvas.addShape(ellipse);
+			}
+			
+		});
+		
 		edgeSlider.addChangeListener(new ChangeListener()
 		{
 			@Override
@@ -141,6 +181,8 @@ public class ArtPanel extends JPanel
 				}
 			}
 		});
+		
+		
 	}
 	private void setupLayout()
 	{
