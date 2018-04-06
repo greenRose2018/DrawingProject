@@ -118,7 +118,17 @@ public class ArtPanel extends JPanel
 	}
 	private void setupListeners()
 	{
-		
+		edgeSlider.addChangeListener(new ChangeListener()
+		{
+			@Override
+			public void stateChanged(ChangeEvent e)
+			{
+				if(!edgeSlider.getValueIsAdjusting())
+				{
+					currentEdgeCount = edgeSlider.getValue();
+				}
+			}
+		});
 	}
 	private void setupLayout()
 	{
