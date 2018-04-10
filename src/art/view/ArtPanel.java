@@ -192,12 +192,18 @@ public class ArtPanel extends JPanel
 	private void setupLayout()
 	{
 		
+		appLayout.putConstraint(SpringLayout.NORTH, canvas, 50, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, canvas, 50, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, canvas, 650, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, sliderPanel, 0, SpringLayout.NORTH, canvas);
+		appLayout.putConstraint(SpringLayout.NORTH, buttonPanel, 50, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, buttonPanel, 40, SpringLayout.EAST, canvas);
+		appLayout.putConstraint(SpringLayout.WEST, sliderPanel, 20, SpringLayout.EAST, buttonPanel);
 	}
 	private boolean coinFlip()
 	{
 		return (int) (Math.random() * 2) == 0;
 	}
-	
 	private Polygon createPolygon(int sides)
 	{
 		Polygon currentShape = new Polygon();
@@ -216,7 +222,6 @@ public class ArtPanel extends JPanel
 		
 		return currentShape;
 	}
-	
 	private Rectangle createRectangle()
 	{
 		Rectangle currentRectangle;
