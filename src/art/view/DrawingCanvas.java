@@ -68,6 +68,10 @@ public class DrawingCanvas extends JPanel
 			currentGraphics.setColor(randomColor());
 			currentGraphics.fill(currentRect);
 		}
+		//you never call paint component only repaint.
+		//because paint component uses up to much memory it is better that the operating 
+		//system handles it
+		//the memory from the painting is dispose of with the code below
 		
 		currentGraphics.dispose();
 		repaint();
@@ -140,6 +144,7 @@ public class DrawingCanvas extends JPanel
 		return new Color(red, green, blue, alpha);
 	}
 	
+	//this method is required
 	@Override
 	protected void paintComponent(Graphics graphics)
 	{
