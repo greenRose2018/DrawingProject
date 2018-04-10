@@ -125,6 +125,7 @@ public class ArtPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				Rectangle rectangle = createRectangle();
+				canvas.addShape(rectangle);
 			}
 		});
 		
