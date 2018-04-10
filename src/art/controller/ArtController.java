@@ -11,12 +11,12 @@ public class ArtController
 
 	public ArtController()
 	{
-		artFrame = new ArtFrame();
+		artFrame = new ArtFrame(this);
 	}
 	
 	public void Start()
 	{
-		
+		JOptionPane.showMessageDialog(artFrame, "Welcome to art!");
 	}
 	
 
