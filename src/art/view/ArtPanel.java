@@ -120,6 +120,10 @@ public class ArtPanel extends JPanel
 	}
 	private void setupListeners()
 	{
+		clearBtn.addActionListener(click -> canvas.clear());
+		saveBtn.addActionListener(click -> canvas.save());
+		colorBtn.addActionListener(click -> canvas.changeBackground());
+		
 		rectangleBtn.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
