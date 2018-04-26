@@ -206,6 +206,44 @@ public class ArtPanel extends JPanel
 				
 			}
 		});
+		canvas.addMouseListener(new MouseListener()
+		{
+
+			@Override
+			public void mouseClicked(MouseEvent e)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e)
+			{
+				canvas.resetLine();
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e)
+			{
+				canvas.resetLine();
+			}
+			
+		});
+			
 	}
 	private void setupLayout()
 	{
@@ -279,4 +317,5 @@ public class ArtPanel extends JPanel
 		
 		return ellipse;
 	}
+	
 }

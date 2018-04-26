@@ -160,6 +160,13 @@ public class DrawingCanvas extends JPanel
 		updateImage();
 		
 	}
+	
+	public void resetLine()
+	{
+		previousX = Integer.MIN_VALUE;
+		previousY = Integer.MIN_VALUE;
+	}
+	
 	private Color randomColor()
 	{
 		int red = (int) (Math.random() * 256);
