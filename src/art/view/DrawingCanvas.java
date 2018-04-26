@@ -134,6 +134,15 @@ public class DrawingCanvas extends JPanel
 		updateImage();
 	}
 	
+	public void drawOnCanvas(int xPosition, int yPosition)
+	{
+		Graphics2D current  = canvasImage.createGraphics();
+		current.setPaint(Color.BLACK);
+		current.setStroke(new BasicStroke(3));
+		
+		updateImage();
+		
+	}
 	private Color randomColor()
 	{
 		int red = (int) (Math.random() * 256);
