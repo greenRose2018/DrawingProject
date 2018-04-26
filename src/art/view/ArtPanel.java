@@ -196,7 +196,7 @@ public class ArtPanel extends JPanel
 			{
 				int x = drag.getX();
 				int y = drag.getY();
-				canvas.drawOnCanvas(x, y);
+				canvas.drawOnCanvas(x, y, currentEdgeCount);
 				
 			}
 			@Override

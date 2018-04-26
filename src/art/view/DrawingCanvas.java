@@ -139,11 +139,11 @@ public class DrawingCanvas extends JPanel
 		updateImage();
 	}
 	
-	public void drawOnCanvas(int xPosition, int yPosition)
+	public void drawOnCanvas(int xPosition, int yPosition, int scale)
 	{
 		Graphics2D current  = canvasImage.createGraphics();
 		current.setPaint(Color.BLACK);
-		current.setStroke(new BasicStroke(3));
+		current.setStroke(new BasicStroke(scale));
 		
 		if(previousX == Integer.MIN_VALUE)
 		{
