@@ -20,12 +20,17 @@ public class DrawingCanvas extends JPanel
 	private ArrayList<Ellipse2D> ellipseList;
 	private ArrayList<Rectangle> rectangleList;
 	private ArtController app;
+	private int previousX;
+	private int previousY;
 	
 	private BufferedImage canvasImage;
 	
 	public DrawingCanvas(ArtController app)
 	{
 		this.app = app;
+		
+		previousX = Integer.MIN_VALUE;
+		previousY = Integer.MIN_VALUE;
 		triangleList = new ArrayList<Polygon>();
 		polygonList = new ArrayList<Polygon>();
 		ellipseList = new ArrayList<Ellipse2D>();
@@ -140,6 +145,18 @@ public class DrawingCanvas extends JPanel
 		current.setPaint(Color.BLACK);
 		current.setStroke(new BasicStroke(3));
 		
+		if(previousX == Integer.MIN_VALUE)
+		{
+			current.drawLine(xPosition,yPosition,xPosition,yPosition);
+			
+		}
+		else
+		{
+			current.drawLine(previousX,previousY,xPosition,yPosition);
+		}
+		
+		previousX = xPosition;
+		previousY = yPosition;
 		updateImage();
 		
 	}
